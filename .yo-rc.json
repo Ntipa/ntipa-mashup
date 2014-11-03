@@ -1,0 +1,18 @@
+{
+  "generator-jhipster": {
+    "baseName": "ntipa-mashup",
+    "packageName": "com.ipublic.mashup",
+    "packageFolder": "com/ipublic/mashup",
+    "authenticationType": "cookie",
+    "hibernateCache": "hazelcast",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "nosql",
+    "devDatabaseType": "mongodb",
+    "prodDatabaseType": "mongodb",
+    "useCompass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "javaVersion": "7"
+  }
+}

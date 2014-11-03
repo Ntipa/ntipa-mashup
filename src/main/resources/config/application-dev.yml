@@ -1,0 +1,44 @@
+server:
+    port: 8080
+
+spring:
+    profiles: dev
+    data:
+        mongodb:
+            host: localhost
+            port: 27017
+            databaseName: ntipa-mashup
+    
+
+    mail:
+        baseUrl: http://localhost:8080
+
+    thymeleaf:
+        mode: XHTML
+        cache: false
+        viewNames: error
+
+metrics:
+    jmx.enabled: true
+    graphite:
+        enabled: false
+        host: localhost
+        port: 2003
+
+cache:
+    timeToLiveSeconds: 3600
+    hazelcast:
+        debug: true
+        stickySession: false
+        backupCount: 1
+
+# You can add as many as folders to watch
+# You just need to add a dash + the directory to watch
+hotReload:
+    enabled: true
+    package:
+      project: com.ipublic.mashup
+      domain: com.ipublic.mashup.domain
+      restdto: com.ipublic.mashup.web.rest.dto
+    watchdir:
+      - target/classes

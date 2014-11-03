@@ -1,4 +1,2 @@
-ntipa-mashup
-============
-
-ntipa-mashup
+README for ntipa-mashup
+==========================

@@ -1,0 +1,64 @@
+<div  ng-cloak>
+
+ <h1  >Welcome, Ntipa Mashup!</h1>
+        
+
+<div  ng-controller="PlumbCtrl">
+ <button type="button" class="btn btn-primary btn-lg" ng-click="redraw()">Ridisegna</button>
+        <div  class="drawMenu">
+            <div plumb-menu-item class="menu-item" ng-repeat="module in library" 
+                ng-style="{ 'left':module.x, 'top':module.y }"
+                data-identifier="{{module.library_id}}" draggable>
+                <div class="summary">{{module.title}}
+                </div>
+            </div>
+        </div>
+
+    <div class="container drop-container drawContainer" ng-click="addEvent($event)" droppable>       
+        <div plumb-item class="item" ng-repeat="module in schema" ng-style="{ 'left':module.x, 'top':module.y }"
+            data-identifier="{{module.schema_id}}">
+            <div class="title">{{module.title}}</div>
+            {{module.description}}
+            <div plumb-connect class="connect"></div>
+        </div>
+   
+    </div>
+
+        <div post-render></div>
+
+    <span ng-init="init()"></span>
+</div>
+
+
+
+   
+        <div class="well">
+           <p class="lead"  >
+
+        A mashup, in web development, is a web page, or web application, that uses
+         content from more than one source to create a single new service displayed</p>
+
+            <div ng-switch="authenticated">
+                <div class="alert alert-success" ng-switch-when="true"
+                     translate="main.logged.message" translate-values="{username: '{{account.login}}'}">
+                    You are logged in as user "Admin".
+                </div>
+
+                <div class="alert alert-warning" ng-switch-when="false" translate="global.messages.info.authenticated">
+                    If you want to <a href="#/login">authenticate</a>, you can try the default login="admin" and
+                    password="admin".
+                </div>
+
+                <div class="alert alert-warning" ng-switch-when="false" translate="global.messages.info.register">
+                    Don't have an account? <a href=\"#/register\">Register</a>
+                </div>
+            </div>
+
+            
+
+           
+        </div>
+   
+
+
+</div>
